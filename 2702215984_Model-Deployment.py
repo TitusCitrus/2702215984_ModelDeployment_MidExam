@@ -2,7 +2,6 @@ import streamlit as st
 import joblib
 import pandas as pd
 import numpy as np
-from sklearn.ensemble import RandomForestClassifier
 
 # Define the ModelInference class
 class ModelInference:
@@ -30,8 +29,6 @@ class ModelInference:
         # Make prediction with the model
         prediction = self.model.predict(input_data)
         return prediction
-
-print(f"[DEBUG] Loaded model type: {type(self.model)}")
 
 # Load the trained model with ModelInference
 model_inference = ModelInference("rf_model.pkl")
