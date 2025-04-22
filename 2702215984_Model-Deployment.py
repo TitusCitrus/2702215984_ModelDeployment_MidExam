@@ -39,7 +39,6 @@ def main():
     # Input fields from the user
     no_of_adults = st.number_input("Number of Adults", min_value=0, value=2)
     no_of_children = st.number_input("Number of Children", min_value=0, value=0)
-    no_of_guests = st.number_input("Total Guests", min_value=1, value=2)
     no_of_weekend_nights = st.number_input("Weekend Nights", min_value=0, value=1)
     no_of_week_nights = st.number_input("Week Nights", min_value=0, value=2)
     type_of_meal_plan = st.number_input("Meal Plan", min_value=1, max_value=5, value=1) 
@@ -55,6 +54,7 @@ def main():
     no_of_previous_bookings_not_canceled = st.number_input("Prev Bookings Not Canceled", min_value=0, value=0)
     avg_price_per_room = st.number_input("Average Price", min_value=0.0, value=65.00)
     no_of_special_requests = st.number_input("Special Requests", min_value=0, value=0)
+    no_of_guests = st.number_input("Total Guests", min_value=1, value=2)
 
     # Prediction button
     if st.button("Predict Cancellation"):
@@ -62,7 +62,6 @@ def main():
         features = {
             "no_of_adults": no_of_adults,
             "no_of_children": no_of_children,
-            "no_of_guests": no_of_guests,
             "no_of_weekend_nights": no_of_weekend_nights,
             "no_of_week_nights": no_of_week_nights,
             "type_of_meal_plan": type_of_meal_plan,
@@ -78,6 +77,7 @@ def main():
             "no_of_previous_bookings_not_canceled": no_of_previous_bookings_not_canceled,
             "avg_price_per_room": avg_price_per_room,
             "no_of_special_requests": no_of_special_requests,
+            "no_of_guests": no_of_guests
         }
 
         # Make prediction using the ModelInference class
